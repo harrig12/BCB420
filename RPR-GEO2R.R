@@ -574,6 +574,7 @@ SGD_features$sysName[which("YML116W-A" == SGD_features$sysName)] = "YML117W-A"
 
 #    Print the descriptions of the top ten differentially expressed genes.
 for (i in 1:10){
+  print(SGD_features$name[SGD_features$sysName == myTable$ID[i]])
   print(SGD_features$description[SGD_features$sysName == myTable$ID[i]])
 }
 
