@@ -34,7 +34,6 @@
 #TOC>
 #TOC>   Section  Title                                                Line
 #TOC> --------------------------------------------------------------------
-<<<<<<< HEAD
 #TOC>   1        Preparations                                           53
 #TOC>   2        Loading a GEO Dataset                                  84
 #TOC>   3        Column wise analysis - time points                    154
@@ -47,20 +46,6 @@
 #TOC>   5.1      Final task: Gene descriptions                         490
 #TOC>   6        Improving on Discovery by Differential Expression     495
 #TOC>   7        Annotation data                                       577
-=======
-#TOC>   1        Preparations                                           51
-#TOC>   2        Loading a GEO Dataset                                  82
-#TOC>   3        Column wise analysis - time points                    152
-#TOC>   3.1      Task - Comparison of experiments                      158
-#TOC>   3.2      Grouped Samples                                       205
-#TOC>   4        Row-wise Analysis: Expression Profiles                240
-#TOC>   4.1      Task - Read a table of features                       275
-#TOC>   4.2      Selected Expression profiles                          323
-#TOC>   5        Differential Expression                               364
-#TOC>   5.1      Final task: Gene descriptions                         488
-#TOC>   6        Improving on Discovery by Differential Expression     493
-#TOC>   7        Annotation data                                       575
->>>>>>> b17a9e202ad3429a716683538b3d0ed8d7d9ff9e
 #TOC>
 #TOC> ==========================================================================
 
@@ -379,7 +364,7 @@ readLines("./data/SGD_features.tab", n = 5)
 
 #  How should we handle rows/columns that are missing or not unique?
 
-source("dataParsingGEO2R.R")
+source("../dataParsingGEO2R.R")
 head(SGD_features)
 
 # ==   4.2  Selected Expression profiles  ======================================
@@ -422,6 +407,40 @@ SGD_features$description[iFeature]
 #TASK>  Also: are the gene names in the feature table upper case, or lower case?
 #TASK>  Also: note that the absolute values of change are quite different.
 #TASK>  Also: note that some values may be outliers i.e. failed experiments.)
+
+#expect the profiles to spike and dip in a consistent way such that the genes that
+#"turn on" are inversely spiking and dipping to the genes that "turn off"
+
+geneList = c("Cdc14", "Mbp1", "Swi6", "Swi4", "Whi5", "Cdc28", "Cln1", "Cln2", "Cln3",
+             "Rad53", "Cdc28", "Clb1", "Clb2", "Clb6", "Nrm1",
+             "Act1", "Alg9")
+
+plotAndPrint <- function(gene){
+  #plot expression
+  (iFeature <- which(SGD_features$name == gene))
+  (iExprs   <- which(featureNames(GSE3635) == SGD_features$sysName[iFeature]))
+  plot(seq(0, 120, by = 10),
+      exprs(GSE3635)[iExprs, ],
+       main = paste("Expression profile for", gene),
+       xlab = "time (min)",
+       ylab = "expression",
+       type = "b",
+       col= "maroon")
+  abline(h =  0, col = "#00000055")
+  abline(v = 60, col = "#00000055")
+
+  # and print description
+  print(SGD_features$description[iFeature])
+}
+
+#all gene names in the table are capitalized
+for (i in (1:length(geneList))){
+  plotAndPrint(toupper(geneList[i]))
+}
+
+#prediction was more or less correct, the "on" genes showed a dip around 60,
+#while the "off" genes showed a hump. (except for Cln3, which showed a hump
+# and Rad53 which showed a dip).
 
 # =    5  Differential Expression  =============================================
 
@@ -549,7 +568,15 @@ for (name in toupper(myControls)) {
 
 # ==   5.1  Final task: Gene descriptions  =====================================
 
+#found "YML117W-A" not in my systematic names, looked up its alias
+#YML116W-A and found it there so renamed it
+SGD_features$sysName[which("YML116W-A" == SGD_features$sysName)] = "YML117W-A"
+
 #    Print the descriptions of the top ten differentially expressed genes.
+for (i in 1:10){
+  print(SGD_features$description[SGD_features$sysName == myTable$ID[i]])
+}
+
 
 
 # =    6  Improving on Discovery by Differential Expression  ===================
@@ -591,7 +618,7 @@ myTopC <- order(myCorrelations, decreasing = TRUE)[1:10]  # top ten
 
 # Get information
 SGD_features[which(SGD_features$sysName == ID), ]
-# Of course: the highest correlation is Cln1 itself. This is our positive
+# Of course: the highest correlation is Cln2 itself. This is our positive
 # control for the experiment.
 
 # Let's plot the rest
