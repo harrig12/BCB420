@@ -42,11 +42,6 @@ if (! require(edgeR, quietly=TRUE)) {
   library(edgeR)
 }
 
-if (! require(ggplot2, quietly=TRUE)) {
-  install.packages("ggplot2")
-  library(ggplot2)
-}
-
 # ====  FUNCTIONS  =============================================================
 
 # Define functions or source external files
