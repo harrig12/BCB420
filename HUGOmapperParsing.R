@@ -15,7 +15,12 @@ colnames(mappable) <- c("symbols", "synonyms")
 synMap <- rbind(synMap, mappable)
 
 #manual filtering of unmatched:
-#certain genes has no HUGO equivalents, these tended to be antibody receptors
+#certain genes has no HUGO equivalents
+manualMatched <- read.delim("manMatchGSE84712.txt", header = F, sep = "\t", stringsAsFactors = F)
+colnames(manualMatched) <- c("symbols", "synonyms")
+synMap <- rbind(synMap, manualMatched)
 
+#some of the symbols added are not in HUGOsymbols, so remove these from synMap
+synMap <- synMap[(synMap$symbols %in% HUGOsymbols),]
 
-
+#[END]
