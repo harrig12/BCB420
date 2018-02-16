@@ -1,4 +1,4 @@
-#get GSE84712 data
+#get GSE84712 data and map to HUGO symbols
 #modified from expressionAnalysisSampleCode.R
 
 if (! require(Biobase, quietly=TRUE)) {
@@ -74,7 +74,8 @@ source("HUGOmapperParsing.R")
 mappable <- extraRNAseqGene.IDs[extraRNAseqGene.IDs %in% synMap$synonyms]
 
 #now that we have more mappings, there are some duplicates.
-#(Two subunits mapping to the same HUGO symbol for example)
+#(Two different synonyms mapping to a single HUGO symbol for example,
+#probably due to the reference genome used for alignment)
 wDuplicates <- GSE84712
 wDuplicates$reMappedID <- wDuplicates$Gene.ID
 
@@ -89,15 +90,24 @@ dupHUGOs <- wDuplicates$reMappedID[which(duplicated(wDuplicates$reMappedID))]
 (length(dupHUGOs)) #31
 
 #then find original versions of those geneIDs
-doubleMappedGenes <- wDuplicates[, c("Gene.ID","reMappedID")][which(wDuplicates$reMappedID %in% doubleMapped),]
-(nrow(doubleMappedGenes)) # 60, two of the doubleMapped were actually triple mapped
+doubleMappedGenes <- wDuplicates[, c("Gene.ID","reMappedID", "controlMean", "treatedMean")][which(wDuplicates$reMappedID %in% doubleMapped),]
+(nrow(doubleMappedGenes)) # 60, two of the doubleMapped genes were actually triple mapped
 
 #Show original and new mappings, manually decide which expression values should be used
 #as the values for that HUGO symbol. In class we decided we will keep only probe with
 #highest mean/median with robust statistics. This translates similarly for RNAseq.
+#print the average expression value beside each and choose which to keep or not.
 (doubleMappedGenes)
-#print the average expression value beside each
+doublesClean <- read.table("HUGOduplicateCleaning.txt", stringsAsFactors = F)
+discardDouble <- doubleMappedGenes$Gene.ID[!doublesClean$retainClean]
 
+#store the cleaned version of the experiment; all rows except those with
+#the duplicates we eliminated
+CGSE84712 <- GSE84712[!(GSE84712$Gene.ID %in% discardDouble),]
+(nrow(CGSE84712)) #30 rows removed
+
+#write mapped experiment to file
+save(CGSE84712, file="MappedGSE84712.RData")
 
 # value distributions:
 
@@ -109,21 +119,21 @@ cyclicPalette <- colorRampPalette(c("#00AAFF",
                                     "#FFAA00",
                                     "#00AAFF"))
 
-boxplot(GSE84712[ , 3:29],
+boxplot(CGSE84712[ , 3:29],
         boxwex = 0.6,
         notch = TRUE,
         main = "GSE84712 controls",
         outline = FALSE,
         col = cyclicPalette(27))
 
-boxplot(GSE84712[ , 30:55],
+boxplot(CGSE84712[ , 30:55],
         boxwex = 0.6,
         notch = TRUE,
         main = "GSE84712 Lead30",
         outline = FALSE,
         col = cyclicPalette(25))
 
-boxplot(GSE84712[ , 56:81],
+boxplot(CGSE84712[ , 56:81],
         boxwex = 0.6,
         notch = TRUE,
         main = "GSE84712 Lead3",
