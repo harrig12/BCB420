@@ -14,6 +14,8 @@ mappable <- HUGOmap[(HUGOmap$Match.type == "Previous symbol"| HUGOmap$Match.type
 colnames(mappable) <- c("symbols", "synonyms")
 synMap <- rbind(synMap, mappable)
 
+#manual filtering of unmatched:
+#certain genes has no HUGO equivalents, these tended to be antibody receptors
 
 
 

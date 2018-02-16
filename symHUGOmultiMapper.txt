@@ -1,0 +1,383 @@
+Input	Match type	Approved symbol	Approved name	HGNC ID	Location
+LOC286238	Unmatched
+LOC149373	Unmatched
+GAGE4	Approved symbol	GAGE4	G antigen 4	HGNC:4101	Xp11.4-p11.2 not on reference assembly
+LOC646851	Unmatched
+FAM48B2	Previous symbol	SUPT20HL2	SUPT20H like 2	HGNC:31797	Xp22.11
+SYNJ2BP-COX16	Approved symbol	SYNJ2BP-COX16	SYNJ2BP-COX16 readthrough	HGNC:48350	14q24.2
+STON1-GTF2A1L	Approved symbol	STON1-GTF2A1L	STON1-GTF2A1L readthrough	HGNC:30651	2p16.3
+LOC649330	Unmatched
+CCBP2	Synonyms	ACKR4	atypical chemokine receptor 4	HGNC:1611	3q22.1
+CCBP2	Previous symbol	ACKR2	atypical chemokine receptor 2	HGNC:1565	3p22.1
+PCDHA9	Approved symbol	PCDHA9	protocadherin alpha 9	HGNC:8675	5q31.3
+NBPF7	Approved symbol	NBPF7	NBPF member 7	HGNC:31989	1p12
+LOC100329135	Unmatched
+LOC100130705	Unmatched
+SF3B14	Unmatched
+HSPE1-MOB4	Approved symbol	HSPE1-MOB4	HSPE1-MOB4 readthrough	HGNC:49184	2q33.1
+ZNF664-FAM101A	Unmatched
+FLJ22184	Unmatched
+TNFAIP8L2-SCNM1	Unmatched
+LOC375190	Unmatched
+LOC440335	Unmatched
+LOC100129924	Unmatched
+ZHX1-C8ORF76	Approved symbol	ZHX1-C8orf76	ZHX1-C8orf76 readthrough	HGNC:42975	8q24.13
+LOC646498	Unmatched
+LOC388813	Unmatched
+LOC728393	Unmatched
+LOC100288520	Unmatched
+C8ORFK29	Synonyms	TMEM249	transmembrane protein 249	HGNC:44155	8q24.3
+LOC120824	Unmatched
+RNF103-CHMP3	Approved symbol	RNF103-CHMP3	RNF103-CHMP3 readthrough	HGNC:38847	2p11.2
+LOC100293534	Unmatched
+LOC100507050	Unmatched
+LOC100505478	Unmatched
+LOC158434	Unmatched
+LOC728379	Unmatched
+LOC100130357	Unmatched
+JMJD7-PLA2G4B	Approved symbol	JMJD7-PLA2G4B	JMJD7-PLA2G4B readthrough	HGNC:34449	15q15.1
+SGK196	Synonyms	POMK	protein-O-mannose kinase	HGNC:26267	8p11.21
+C11orf48	Previous symbol	C11orf98	chromosome 11 open reading frame 98	HGNC:51238	11q12.3
+C11orf48	Previous symbol	LBHD1	LBH domain containing 1	HGNC:28351	11q12.3
+MSANTD3-TMEFF1	Approved symbol	MSANTD3-TMEFF1	MSANTD3-TMEFF1 readthrough	HGNC:38838	9q31.1
+TLX1NB	Approved symbol	TLX1NB	TLX1 neighbor	HGNC:37183	10q24.31
+C17orf82	Approved symbol	C17orf82	chromosome 17 open reading frame 82	HGNC:32699	17q23.2
+C10orf91	Approved symbol	C10orf91	chromosome 10 open reading frame 91 (putative)	HGNC:27275	10q26.3
+TMEM14E	Previous symbol	TMEM14EP	transmembrane protein 14E, pseudogene	HGNC:34386	3q25.2
+OR9G9	Approved symbol	OR9G9	olfactory receptor family 9 subfamily G member 9	HGNC:31940	11q11 alternate reference locus
+PCDHA1	Approved symbol	PCDHA1	protocadherin alpha 1	HGNC:8663	5q31.3
+C15orf53	Approved symbol	C15orf53	chromosome 15 open reading frame 53	HGNC:33796	15q14
+C8orf44-SGK3	Approved symbol	C8orf44-SGK3	C8orf44-SGK3 readthrough	HGNC:48354	8q13.1
+MLL4	Synonyms	KMT2D	lysine methyltransferase 2D	HGNC:7133	12q13.12
+MLL4	Synonyms	KMT2B	lysine methyltransferase 2B	HGNC:15840	19q13.12
+PRAMEF3	Entry withdrawn	PRAMEF3~withdrawn		HGNC:14087
+C5orf55	Previous symbol	EXOC3-AS1	EXOC3 antisense RNA 1	HGNC:25175	5p15.33
+GAGE6	Approved symbol	GAGE6	G antigen 6	HGNC:4103	Xp11.4-p11.2 not on reference assembly
+TNFSF12-TNFSF13	Approved symbol	TNFSF12-TNFSF13	TNFSF12-TNFSF13 readthrough	HGNC:33537	17p13.1
+CHURC1-FNTB	Approved symbol	CHURC1-FNTB	CHURC1-FNTB readthrough	HGNC:42960	14q23.3
+OR8G2	Previous symbol	OR8G2P	olfactory receptor family 8 subfamily G member 2 pseudogene	HGNC:8485	11q24.2
+UGT1A6	Approved symbol	UGT1A6	UDP glucuronosyltransferase family 1 member A6	HGNC:12538	2q37.1
+LOC402160	Unmatched
+RUSC1-AS1	Approved symbol	RUSC1-AS1	RUSC1 antisense RNA 1	HGNC:26680	1q22
+GPCRLTM7	Unmatched
+LOC100130480	Unmatched
+C6orf7	Previous symbol	LINC01621	long intergenic non-protein coding RNA 1621	HGNC:14109	6q14.1
+TMPRSS11BNL	Approved symbol	TMPRSS11BNL	TMPRSS11B N-terminal like, pseudogene	HGNC:37262	4q13.2
+ISY1-RAB43	Approved symbol	ISY1-RAB43	ISY1-RAB43 readthrough	HGNC:42969	3q21.3
+C9orf37	Previous symbol	ARRDC1-AS1	ARRDC1 antisense RNA 1	HGNC:23395	9q34.3
+GTF2H2D	Previous symbol	GTF2H2C_2	GTF2H2 family member C, copy 2	HGNC:35418	5q13.2 alternate reference locus
+C1QTNF9B-AS1	Previous symbol	PCOTH	Pro-X-Gly collagen triple helix like repeat containing	HGNC:39839	13q12.12
+C3orf79	Approved symbol	C3orf79	chromosome 3 open reading frame 79	HGNC:37259	3q25.2
+BAGE2	Approved symbol	BAGE2	BAGE family member 2	HGNC:15723	21p11.2
+DNAJC25-GNG10	Approved symbol	DNAJC25-GNG10	DNAJC25-GNG10 readthrough	HGNC:37501	9q31.3
+C20orf78	Approved symbol	C20orf78	chromosome 20 open reading frame 78	HGNC:16210	20p11.23
+LOC100507003	Unmatched
+C3orf27	Previous symbol	LINC01565	long intergenic non-protein coding RNA 1565	HGNC:17099	3q21.3
+LOC100507341	Unmatched
+UGT1A5	Approved symbol	UGT1A5	UDP glucuronosyltransferase family 1 member A5	HGNC:12537	2q37.1
+PHOSPHO2-KLHL23	Unmatched
+ABP1	Previous symbol	AOC1	amine oxidase, copper containing 1	HGNC:80	7q36.1
+ABP1	Synonyms	DBNL	drebrin like	HGNC:2696	7p13
+LOC100288255	Unmatched
+C7orf69	Approved symbol	C7orf69	chromosome 7 open reading frame 69	HGNC:21911	7p12.3
+LOC650293	Unmatched
+OR8U8	Approved symbol	OR8U8	olfactory receptor family 8 subfamily U member 8	HGNC:27538	11q1 alternate reference locus
+PRAMEF22	Approved symbol	PRAMEF22	PRAME family member 22	HGNC:34393	1p36.21 alternate reference locus
+LOC100130301	Unmatched
+LOC643802	Unmatched
+C18orf56	Previous symbol	TYMSOS	TYMS opposite strand	HGNC:29553	18p11.32
+FLJ45513	Unmatched
+LOC339862	Unmatched
+LOC154872	Unmatched
+RBM14-RBM4	Approved symbol	RBM14-RBM4	RBM14-RBM4 readthrough	HGNC:38840	11q13.2
+COMMD3-BMI1	Approved symbol	COMMD3-BMI1	COMMD3-BMI1 readthrough	HGNC:48326	10p12.2
+C2orf27A	Approved symbol	C2orf27A	chromosome 2 open reading frame 27A	HGNC:25077	2q21.2
+LOC646627	Unmatched
+CSAG3	Approved symbol	CSAG3	CSAG family member 3	HGNC:26237	Xq28
+LOC100289561	Unmatched
+C20orf166	Previous symbol	MIR1-1HG	MIR1-1 host gene	HGNC:16159	20q13.33
+LOC200726	Unmatched
+LOC390940	Unmatched
+DHRS4L1	Approved symbol	DHRS4L1	dehydrogenase/reductase 4 like 1	HGNC:19732	14q11.2
+TTLL13	Previous symbol	TTLL13P	tubulin tyrosine ligase like 13, pseudogene	HGNC:32484	15q26.1
+LOC100507055	Unmatched
+LOC100144595	Unmatched
+C6orf99	Approved symbol	C6orf99	chromosome 6 open reading frame 99	HGNC:21179	6q25.3
+TRIM39-RPP21	Approved symbol	TRIM39-RPP21	TRIM39-RPP21 readthrough	HGNC:38845	6p22.1
+DUX4L3	Approved symbol	DUX4L3	double homeobox 4 like 3	HGNC:38688	4q35.2
+C10orf111	Approved symbol	C10orf111	chromosome 10 open reading frame 111	HGNC:28582	10p13
+LOC284385	Unmatched
+PLAC4	Approved symbol	PLAC4	placenta specific 4	HGNC:14616	21q22.2
+C9orf139	Approved symbol	C9orf139	chromosome 9 open reading frame 139	HGNC:31426	9q34.3
+LOC100129083	Unmatched
+DBC1	Previous symbol	BRINP1	BMP/retinoic acid inducible neural specific 1	HGNC:2687	9q33.1
+DBC1	Synonyms	CCAR2	cell cycle and apoptosis regulator 2	HGNC:23360	8p21.3
+HDGFRP3	Synonyms	HDGFL3	HDGF like 3	HGNC:24937	15q25.2
+PRAMEF13	Approved symbol	PRAMEF13	PRAME family member 13	HGNC:13262	1p36.21
+ANP32C	Approved symbol	ANP32C	acidic nuclear phosphoprotein 32 family member C	HGNC:16675	4q32.3
+PRAMEF16	Entry withdrawn	PRAMEF16~withdrawn		HGNC:25767
+LOC100127983	Unmatched
+LOC100130348	Unmatched
+RPS10-NUDT3	Approved symbol	RPS10-NUDT3	RPS10-NUDT3 readthrough	HGNC:49181	6p21.31
+C17orf102	Approved symbol	C17orf102	chromosome 17 open reading frame 102	HGNC:34412	17q12
+LOC283710	Unmatched
+PNMA6D	Previous symbol	PNMA6B	PNMA family member 6B (pseudogene)	HGNC:26681	Xq28
+CORO7-PAM16	Approved symbol	CORO7-PAM16	CORO7-PAM16 readthrough	HGNC:44424	16p13.3
+FPGT-TNNI3K	Approved symbol	FPGT-TNNI3K	FPGT-TNNI3K readthrough	HGNC:42952	1p31.1
+C12orf61	Previous symbol	LINC01465	long intergenic non-protein coding RNA 1465	HGNC:26364	12q14.1
+LOC401052	Unmatched
+GSTT1	Approved symbol	GSTT1	glutathione S-transferase theta 1	HGNC:4641	22q11.23 alternate reference locus
+AGAP11	Approved symbol	AGAP11	ArfGAP with GTPase domain, ankyrin repeat and PH domain 11	HGNC:29421	10q23.2
+IQCJ-SCHIP1	Approved symbol	IQCJ-SCHIP1	IQCJ-SCHIP1 readthrough	HGNC:38842	3q25.32-q25.33
+PALM2-AKAP2	Approved symbol	PALM2-AKAP2	PALM2-AKAP2 readthrough	HGNC:33529	9q31.3
+PMF1-BGLAP	Approved symbol	PMF1-BGLAP	PMF1-BGLAP readthrough	HGNC:42953	1q22
+DPH3P1	Approved symbol	DPH3P1	diphthamide biosynthesis 3 pseudogene 1	HGNC:16136	20q13.33
+C8orf31	Approved symbol	C8orf31	chromosome 8 open reading frame 31 (putative)	HGNC:26731	8q24.3
+CCRL1	Previous symbol	ACKR4	atypical chemokine receptor 4	HGNC:1611	3q22.1
+CCRL1	Synonyms	CX3CR1	C-X3-C motif chemokine receptor 1	HGNC:2558	3p22.2
+UGT2A2	Approved symbol	UGT2A2	UDP glucuronosyltransferase family 2 member A2	HGNC:28183	4q13.3
+LOC730755	Unmatched
+PPAN-P2RY11	Approved symbol	PPAN-P2RY11	PPAN-P2RY11 readthrough	HGNC:33526	19p13.2
+PCDHA13	Approved symbol	PCDHA13	protocadherin alpha 13	HGNC:8667	5q31.3
+LOC100653515	Unmatched
+TRIM6-TRIM34	Approved symbol	TRIM6-TRIM34	TRIM6-TRIM34 readthrough	HGNC:33440	11p15.4
+CCL4L1	Approved symbol	CCL4L1	C-C motif chemokine ligand 4 like 1	HGNC:10631	17q12 alternate reference locus
+C6orf195	Previous symbol	LINC01600	long intergenic non-protein coding RNA 1600	HGNC:21600	6p25.2
+LOC100505679	Unmatched
+FAM47E-STBD1	Approved symbol	FAM47E-STBD1	FAM47E-STBD1 readthrough	HGNC:44667	4q21.1
+PCDHA10	Approved symbol	PCDHA10	protocadherin alpha 10	HGNC:8664	5q31.3
+FAM75C1	Previous symbol	SPATA31C1	SPATA31 subfamily C member 1	HGNC:27846	9q22.1
+SGK223	Synonyms	PRAG1	PEAK1 related, kinase-activating pseudokinase 1	HGNC:25438	8p23.1
+LOC100506688	Unmatched
+LOC388588	Unmatched
+LOC728392	Unmatched
+AGAP7	Previous symbol	AGAP7P	ArfGAP with GTPase domain, ankyrin repeat and PH domain 7, pseudogene	HGNC:23465	10q11.22
+LOC100507203	Unmatched
+CKLF-CMTM1	Approved symbol	CKLF-CMTM1	CKLF-CMTM1 readthrough	HGNC:39977	16q21
+PCDHA3	Approved symbol	PCDHA3	protocadherin alpha 3	HGNC:8669	5q31.3
+FAM25B	Previous symbol	FAM25BP	family with sequence similarity 25 member B, pseudogene	HGNC:23584	10q11.22
+ANKHD1-EIF4EBP3	Approved symbol	ANKHD1-EIF4EBP3	ANKHD1-EIF4EBP3 readthrough	HGNC:33530	5q31.3
+C15orf54	Approved symbol	C15orf54	chromosome 15 open reading frame 54 (putative)	HGNC:33797	15q14
+UGT1A8	Approved symbol	UGT1A8	UDP glucuronosyltransferase family 1 member A8	HGNC:12540	2q37.1
+LOC100506388	Unmatched
+B7H6	Unmatched
+LOC440563	Unmatched
+HDGFRP2	Synonyms	HDGFL2	HDGF like 2	HGNC:14680	19p13.3
+PCDHA5	Approved symbol	PCDHA5	protocadherin alpha 5	HGNC:8671	5q31.3
+TGIF2-C20ORF24	Approved symbol	TGIF2-C20orf24	TGIF2-C20orf24 readthrough	HGNC:44664	20q11.23
+UGT1A3	Approved symbol	UGT1A3	UDP glucuronosyltransferase family 1 member A3	HGNC:12535	2q37.1
+INS-IGF2	Approved symbol	INS-IGF2	INS-IGF2 readthrough	HGNC:33527	11p15.5
+LOC388849	Unmatched
+GIMAP1-GIMAP5	Approved symbol	GIMAP1-GIMAP5	GIMAP1-GIMAP5 readthrough	HGNC:51257	7q36.1
+SLC22A20	Previous symbol	SLC22A20P	solute carrier family 22 member 20, pseudogene	HGNC:29867	11q13.1
+TMEM183B	Approved symbol	TMEM183B	transmembrane protein 183B	HGNC:33205	3q25.1
+GAGE7	Approved symbol	GAGE7	G antigen 7	HGNC:4104	Xp11.4-p11.2 not on reference assembly
+PCDHA4	Approved symbol	PCDHA4	protocadherin alpha 4	HGNC:8670	5q31.3
+LOC388946	Unmatched
+LOC391322	Unmatched
+LOC100132247	Unmatched
+ZNF816-ZNF321P	Approved symbol	ZNF816-ZNF321P	ZNF816-ZNF321P readthrough	HGNC:38879	19q13.41
+LOC100289187	Unmatched
+PCDHA2	Approved symbol	PCDHA2	protocadherin alpha 2	HGNC:8668	5q31.3
+LOC100287144	Unmatched
+C5orf64	Approved symbol	C5orf64	chromosome 5 open reading frame 64	HGNC:26744	5q12.1
+RPL17-C18ORF32	Approved symbol	RPL17-C18orf32	RPL17-C18orf32 readthrough	HGNC:44661	18q21.1
+PCDHA12	Approved symbol	PCDHA12	protocadherin alpha 12	HGNC:8666	5q31.3
+C9orf163	Approved symbol	C9orf163	chromosome 9 open reading frame 163	HGNC:26718	9q34.3
+PCDHA11	Approved symbol	PCDHA11	protocadherin alpha 11	HGNC:8665	5q31.3
+POTEA	Approved symbol	POTEA	POTE ankyrin domain family member A	HGNC:33893	8p11.1
+B3GNT1	Previous symbol	B4GAT1	beta-1,4-glucuronyltransferase 1	HGNC:15685	11q13.2
+B3GNT1	Previous symbol	B3GNT2	UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase 2	HGNC:15629	2p15
+C2orf27B	Approved symbol	C2orf27B	chromosome 2 open reading frame 27B	HGNC:33824	2q21.2
+LOC100132396	Unmatched
+LOC100507588	Unmatched
+LOC728369	Unmatched
+LOC100506650	Unmatched
+LOC100287404	Unmatched
+UGT1A10	Approved symbol	UGT1A10	UDP glucuronosyltransferase family 1 member A10	HGNC:12531	2q37.1
+C7orf66	Approved symbol	C7orf66	chromosome 7 open reading frame 66	HGNC:33712	7q31.1
+C1orf229	Approved symbol	C1orf229	chromosome 1 open reading frame 229	HGNC:33759	1q44
+C8orf87	Approved symbol	C8orf87	chromosome 8 open reading frame 87	HGNC:42974	8q22.1
+LOC347411	Unmatched
+TMED7-TICAM2	Approved symbol	TMED7-TICAM2	TMED7-TICAM2 readthrough	HGNC:33945	5q22.3
+C1orf151-NBL1	Unmatched
+C7orf71	Approved symbol	C7orf71	chromosome 7 open reading frame 71	HGNC:22364	7p15.2
+DSCR4	Approved symbol	DSCR4	Down syndrome critical region 4	HGNC:3045	21q22.13
+CCL3L1	Approved symbol	CCL3L1	C-C motif chemokine ligand 3 like 1	HGNC:10628	17q12 alternate reference locus
+ATP5J2-PTCD1	Previous symbol	ATP5MF-PTCD1	ATP5MF-PTCD1 readthrough	HGNC:38844	7q22.1
+LOC100129480	Unmatched
+PCDHAC1	Approved symbol	PCDHAC1	protocadherin alpha subfamily C, 1	HGNC:8676	5q31.3
+C16orf3	Previous symbol	GAS8-AS1	GAS8 antisense RNA 1	HGNC:1197	16q24.3
+NME1-NME2	Approved symbol	NME1-NME2	NME1-NME2 readthrough	HGNC:33531	17q21.33
+RPL36A-HNRNPH2	Approved symbol	RPL36A-HNRNPH2	RPL36A-HNRNPH2 readthrough	HGNC:48349	Xq22.1
+FLJ25363	Unmatched
+RBAK-LOC389458	Unmatched
+LOC728419	Unmatched
+ZNF812	Previous symbol	ZNF812P	zinc finger protein 812, pseudogene	HGNC:33242	19p13.2
+LOC100287036	Unmatched
+C20orf197	Approved symbol	C20orf197	chromosome 20 open reading frame 197	HGNC:26601	20q13.33
+LOC100507096	Unmatched
+REXO1L1	Previous symbol	REXO1L1P	REXO1 like 1, pseudogene	HGNC:24660	8q21.2
+LOC100506422	Unmatched
+SGK494	Unmatched
+LOC100505549	Unmatched
+PCDHA7	Approved symbol	PCDHA7	protocadherin alpha 7	HGNC:8673	5q31.3
+FOLH1B	Approved symbol	FOLH1B	folate hydrolase 1B	HGNC:13636	11q14.3
+MEF2BNB-MEF2B	Previous symbol	BORCS8-MEF2B	BORCS8-MEF2B readthrough	HGNC:39979	19p13.11
+LOC100129520	Unmatched
+AGPAT9	Synonyms	LPCAT1	lysophosphatidylcholine acyltransferase 1	HGNC:25718	5p15.33
+AGPAT9	Previous symbol	GPAT3	glycerol-3-phosphate acyltransferase 3	HGNC:28157	4q21.23
+LOC653486	Unmatched
+C4orf6	Previous symbol	LINC01587	long intergenic non-protein coding RNA 1587	HGNC:13716	4p16.2
+FAM157A	Approved symbol	FAM157A	family with sequence similarity 157 member A (non-protein coding)	HGNC:34079	3q29
+FAM18B2-CDRT4	Previous symbol	TVP23C-CDRT4	TVP23C-CDRT4 readthrough	HGNC:42961	17p12
+DUX2	Previous symbol	DUX4L8	double homeobox 4 like 8	HGNC:38670	4q35.2
+C1orf204	Previous symbol	SNHG28	small nucleolar RNA host gene 28	HGNC:27647	1q23.2
+TMEM56-RWDD3	Approved symbol	TMEM56-RWDD3	TMEM56-RWDD3 readthrough	HGNC:49388	1p21.3
+LOC730183	Unmatched
+SPINLW1-WFDC6	Previous symbol	EPPIN-WFDC6	EPPIN-WFDC6 readthrough	HGNC:38825	20q13.12
+LOC100288814	Unmatched
+FXYD6-FXYD2	Approved symbol	FXYD6-FXYD2	FXYD6-FXYD2 readthrough	HGNC:39978	11q23.3
+LOC100287177	Unmatched
+LOC81691	Unmatched
+LOC554223	Unmatched
+LOC100507462	Unmatched
+C11orf2	Previous symbol	VPS51	VPS51, GARP complex subunit	HGNC:1172	11q13.1
+C11orf2	Synonyms	IFT46	intraflagellar transport 46	HGNC:26146	11q23.3
+POC1B-GALNT4	Approved symbol	POC1B-GALNT4	POC1B-GALNT4 readthrough	HGNC:42957	12q21.33
+LOC147670	Unmatched
+LOC100287205	Unmatched
+UGT1A4	Approved symbol	UGT1A4	UDP glucuronosyltransferase family 1 member A4	HGNC:12536	2q37.1
+TMEM110-MUSTN1	Approved symbol	TMEM110-MUSTN1	TMEM110-MUSTN1 readthrough	HGNC:38834	3p21.1
+LOC728819	Unmatched
+NT5C1B-RDH14	Approved symbol	NT5C1B-RDH14	NT5C1B-RDH14 readthrough	HGNC:38831	2p24.2
+GPR75-ASB3	Approved symbol	GPR75-ASB3	GPR75-ASB3 readthrough	HGNC:40043	2p16.2
+KLRC4-KLRK1	Approved symbol	KLRC4-KLRK1	KLRC4-KLRK1 readthrough	HGNC:48357	12p13.2
+C10orf25	Approved symbol	C10orf25	chromosome 10 open reading frame 25	HGNC:23509	10q11.21
+LOC399939	Unmatched
+LOC100505841	Unmatched
+LOC100287441	Unmatched
+DUX4L6	Approved symbol	DUX4L6	double homeobox 4 like 6	HGNC:37265	4q35.2
+OSTBETA	Synonyms	SLC51B	solute carrier family 51 beta subunit	HGNC:29956	15q22.31
+TMEM189-UBE2V1	Approved symbol	TMEM189-UBE2V1	TMEM189-UBE2V1 readthrough	HGNC:33521	20q13.13
+ZNF559-ZNF177	Approved symbol	ZNF559-ZNF177	ZNF559-ZNF177 readthrough	HGNC:42964	19p13.2
+MAGEA5	Approved symbol	MAGEA5	MAGE family member A5	HGNC:6803	Xq28
+C2orf48	Approved symbol	C2orf48	chromosome 2 open reading frame 48	HGNC:26322	2p25.1
+LOC100132146	Unmatched
+LOC100287327	Unmatched
+LOC147646	Unmatched
+URGCP-MRPS24	Approved symbol	URGCP-MRPS24	URGCP-MRPS24 readthrough	HGNC:49188	7p13
+FAM157B	Approved symbol	FAM157B	family with sequence similarity 157 member B (non-protein coding)	HGNC:34080	9q34.3
+LOC100287364	Unmatched
+MTRNR2L2	Approved symbol	MTRNR2L2	MT-RNR2 like 2	HGNC:37156	5q14.1
+LOC100288524	Unmatched
+BIVM-ERCC5	Approved symbol	BIVM-ERCC5	BIVM-ERCC5 readthrough	HGNC:43690	13q33.1
+LOC283403	Unmatched
+DUX4L4	Approved symbol	DUX4L4	double homeobox 4 like 4	HGNC:38686	4q35.2
+C15orf56	Approved symbol	C15orf56	chromosome 15 open reading frame 56	HGNC:33868	15q15.1
+LILRA3	Approved symbol	LILRA3	leukocyte immunoglobulin like receptor A3	HGNC:6604	19q13.4 alternate reference locus
+CSRP2BP	Previous symbol	KAT14	lysine acetyltransferase 14	HGNC:15904	20p11.23
+CSRP2BP	Synonyms	PET117	PET117 homolog	HGNC:40045	20p11.23
+FLJ44635	Unmatched
+LOC100287718	Unmatched
+LOC100287478	Unmatched
+PCDHA8	Approved symbol	PCDHA8	protocadherin alpha 8	HGNC:8674	5q31.3
+LOC643037	Unmatched
+UGT1A9	Approved symbol	UGT1A9	UDP glucuronosyltransferase family 1 member A9	HGNC:12541	2q37.1
+LOC283116	Unmatched
+C17orf65	Previous symbol	ASB16-AS1	ASB16 antisense RNA 1	HGNC:25442	17q21.31
+LOC729059	Unmatched
+LOC100509575	Unmatched
+ST20-MTHFS	Approved symbol	ST20-MTHFS	ST20-MTHFS readthrough	HGNC:44655	15q25.1
+DNAJB3	Approved symbol	DNAJB3	DnaJ heat shock protein family (Hsp40) member B3	HGNC:32397	2q37.1
+FAM58BP	Approved symbol	FAM58BP	family with sequence similarity 58 member B, pseudogene	HGNC:27373	1q32.1
+CYP3A7-CYP3AP1	Unmatched
+C9orf106	Approved symbol	C9orf106	chromosome 9 open reading frame 106 (putative)	HGNC:31370	9q34.11
+LOC100129216	Unmatched
+LOC100287238	Unmatched
+ARPC4-TTLL3	Approved symbol	ARPC4-TTLL3	ARPC4-TTLL3 readthrough	HGNC:38830	3p25.3
+LOC100130890	Unmatched
+XKRY	Approved symbol	XKRY	XK related, Y-linked	HGNC:18571	Yq11.222
+LOC100130880	Unmatched
+C15orf38-AP3S2	Approved symbol	C15orf38-AP3S2	C15orf38-AP3S2 readthrough	HGNC:38824	15q26.1
+BAGE5	Approved symbol	BAGE5	BAGE family member 5	HGNC:15732	13cen, GRCh38 novel patch
+LOC100128071	Unmatched
+SMCR9	Entry withdrawn	SMCR9~withdrawn		HGNC:17913
+LOC728400	Unmatched
+LOC100131094	Unmatched
+C13orf35	Previous symbol	ATP11AUN	ATP11A upstream neighbor	HGNC:33793	13q34
+LOC647589	Unmatched
+CSAG2	Approved symbol	CSAG2	CSAG family member 2	HGNC:16847	Xq28
+DUX4L5	Approved symbol	DUX4L5	double homeobox 4 like 5	HGNC:38689	4q35.2
+LOC388276	Unmatched
+THEG5	Unmatched
+LOC646862	Unmatched
+CCDC169-SOHLH2	Approved symbol	CCDC169-SOHLH2	CCDC169-SOHLH2 readthrough	HGNC:38866	13q13.3
+ODZ3	Previous symbol	TENM1	teneurin transmembrane protein 1	HGNC:8117	Xq25
+ODZ3	Previous symbol	TENM3	teneurin transmembrane protein 3	HGNC:29944	4q34.3-q35.1
+AHSA2	Previous symbol	AHSA2P	activator of HSP90 ATPase homolog 2, pseudogene	HGNC:20437	2p15
+LOC100506888	Unmatched
+NDUFC2-KCTD14	Approved symbol	NDUFC2-KCTD14	NDUFC2-KCTD14 readthrough	HGNC:42956	11q14.1
+LOC100287482	Unmatched
+LOC729020	Unmatched
+C9orf170	Approved symbol	C9orf170	chromosome 9 open reading frame 170	HGNC:33817	9q21.33
+C17orf77	Approved symbol	C17orf77	chromosome 17 open reading frame 77	HGNC:26480	17q25.1
+LOC100862671	Unmatched
+C22orf24	Approved symbol	C22orf24	chromosome 22 open reading frame 24	HGNC:23051	22q12.3
+LOC100129636	Unmatched
+LOC730159	Unmatched
+UGT1A7	Approved symbol	UGT1A7	UDP glucuronosyltransferase family 1 member A7	HGNC:12539	2q37.1
+PRR5-ARHGAP8	Approved symbol	PRR5-ARHGAP8	PRR5-ARHGAP8 readthrough	HGNC:34512	22q13.31
+BCL2L2-PABPN1	Approved symbol	BCL2L2-PABPN1	BCL2L2-PABPN1 readthrough	HGNC:42959	14q11.2
+LOC643669	Unmatched
+DUX4L7	Approved symbol	DUX4L7	double homeobox 4 like 7	HGNC:37266	4q35.2
+APITD1-CORT	Previous symbol	CENPS-CORT	CENPS-CORT readthrough	HGNC:38843	1p36.22
+LOC100133267	Unmatched
+NEDD8-MDP1	Approved symbol	NEDD8-MDP1	NEDD8-MDP1 readthrough	HGNC:39551	14q12
+C12orf77	Approved symbol	C12orf77	chromosome 12 open reading frame 77	HGNC:27282	12p12.1
+DUX4L2	Approved symbol	DUX4L2	double homeobox 4 like 2	HGNC:37267	4q35.2
+ARMCX5-GPRASP2	Approved symbol	ARMCX5-GPRASP2	ARMCX5-GPRASP2 readthrough	HGNC:42000	Xq22.1
+CXXC11	Previous symbol	RTP5	receptor transporter protein 5 (putative)	HGNC:26585	2q37.3
+CXXC11	Synonyms	FBXL19	F-box and leucine rich repeat protein 19	HGNC:25300	16p11.2
+GCOM1	Approved symbol	GCOM1	GRINL1A complex locus 1	HGNC:26424	15q21.3
+GCOM1	Synonyms	POLR2M	RNA polymerase II subunit M	HGNC:14862	15q21.3
+GCOM1	Synonyms	MYZAP	myocardial zonula adherens protein	HGNC:43444	15q21.3
+PCDHA6	Approved symbol	PCDHA6	protocadherin alpha 6	HGNC:8672	5q31.3
+PCDHAC2	Approved symbol	PCDHAC2	protocadherin alpha subfamily C, 2	HGNC:8677	5q31.3
+STRA13	Previous symbol	CENPX	centromere protein X	HGNC:11422	17q25.3
+STRA13	Previous symbol	BHLHE40	basic helix-loop-helix family member e40	HGNC:1046	3p26.1
+LOC729264	Unmatched
+MAGEA10-MAGEA5	Unmatched
+C15orf32	Approved symbol	C15orf32	chromosome 15 open reading frame 32	HGNC:26549	15q26.1
+GAGE8	Approved symbol	GAGE8	G antigen 8	HGNC:4106	Xp11 not on reference assembly
+GAGE8	Synonyms	GAGE2E	G antigen 2E	HGNC:31960	Xp11.23
+GAGE8	Synonyms	GAGE2D	G antigen 2D	HGNC:31959	Xp11.23 not on reference assembly
+TARP	Unmatched
+PRSS46	Previous symbol	PRSS46P	serine protease 46, pseudogene	HGNC:37325	3p21.31
+C14orf182	Previous symbol	LINC01588	long intergenic non-protein coding RNA 1588	HGNC:27503	14q21.3
+LOC100287178	Unmatched
+LOC644100	Unmatched
+LOC728373	Unmatched
+LOC100130451	Unmatched
+LOC100507421	Unmatched
+LOC100500938	Unmatched
+C7orf65	Approved symbol	C7orf65	chromosome 7 open reading frame 65	HGNC:34432	7p12.3
+LOC388630	Unmatched
+C14orf183	Previous symbol	LINC01599	long intergenic non-protein coding RNA 1599	HGNC:27285	14q21.3
+XKRY2	Approved symbol	XKRY2	XK related, Y-linked 2	HGNC:23922	Yq11.222
+LOC728405	Unmatched
+LOC389493	Unmatched
+LOC100506012	Unmatched
+LOC256021	Unmatched
+SPDYE2L	Unmatched
+FAM75C2	Previous symbol	SPATA31C2	SPATA31 subfamily C member 2	HGNC:24508	9q22.1
+SGK110	Synonyms	SBK3	SH3 domain binding kinase family member 3	HGNC:44121	19q13.42
+LOC100287513	Unmatched
+MLL2	Previous symbol	KMT2D	lysine methyltransferase 2D	HGNC:7133	12q13.12
+MLL2	Synonyms	KMT2B	lysine methyltransferase 2B	HGNC:15840	19q13.12
+MIR205HG	Approved symbol	MIR205HG	MIR205 host gene	HGNC:43562	1q32.2
+LY75-CD302	Approved symbol	LY75-CD302	LY75-CD302 readthrough	HGNC:38828	2q24.2
+SAA2-SAA4	Approved symbol	SAA2-SAA4	SAA2-SAA4 readthrough	HGNC:39550	11p15.1
+GAGE5	Approved symbol	GAGE5	G antigen 5	HGNC:4102	Xp11.4-p11.2 not on reference assembly
+HGC6.3	Unmatched
+UGT1A1	Approved symbol	UGT1A1	UDP glucuronosyltransferase family 1 member A1	HGNC:12530	2q37.1
