@@ -79,18 +79,18 @@ mappable <- extraRNAseqGene.IDs[extraRNAseqGene.IDs %in% synMap$synonyms]
 wDuplicates <- GSE84712
 wDuplicates$reMappedID <- wDuplicates$Gene.ID
 
-#if a gene is mappable, rename it in wDuplicates
+#if a gene is mappable, remap it in wDuplicates
 for (x in mappable){
   wDuplicates$reMappedID[wDuplicates$Gene.ID == x] <- synMap$symbols[synMap$synonyms == x]
 }
 
 #find which HUGO symbols are represented more than once in the experiment
 #first find the duplicated geneIDs
-dupHUGOs <- wDuplicates$reMappedID[which(duplicated(wDuplicates$reMappedID))]
-(length(dupHUGOs)) #31
+dupGIDs <- wDuplicates$reMappedID[which(duplicated(wDuplicates$reMappedID))]
+(length(dupGIDs)) #31
 
 #then find original versions of those geneIDs
-doubleMappedGenes <- wDuplicates[, c("Gene.ID","reMappedID", "controlMean", "treatedMean")][which(wDuplicates$reMappedID %in% doubleMapped),]
+doubleMappedGenes <- wDuplicates[, c("Gene.ID","reMappedID", "controlMean", "treatedMean")][which(wDuplicates$reMappedID %in% dupGIDs),]
 (nrow(doubleMappedGenes)) # 60, two of the doubleMapped genes were actually triple mapped
 
 #Show original and new mappings, manually decide which expression values should be used
@@ -110,7 +110,6 @@ CGSE84712 <- GSE84712[!(GSE84712$Gene.ID %in% discardDouble),]
 save(CGSE84712, file="MappedGSE84712.RData")
 
 # value distributions:
-
 cyclicPalette <- colorRampPalette(c("#00AAFF",
                                     "#DDDD00",
                                     "#FFAA00",
