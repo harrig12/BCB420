@@ -2,4 +2,6 @@ ABC-units/
 data/
 plots/
 zu/
+*.RData
+.DS_Store
 
