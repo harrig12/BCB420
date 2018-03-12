@@ -82,9 +82,27 @@ plot(geneIntervals,
      axes = T)
 axis(2, at = c(0,1,2))
 
-#draw centromoere
+#draw centromere
 rect(CH20CENTROMERE[1], -0.05, CH20CENTROMERE[2], 2.05, col = "#ff00007F", border = NA)
 legend(x = 4e+07, y = 0.5, c("HGNC gene", "Centromere"), col=c(1,"#ff00007F"), lwd=3)
 
+#find start and end coordinates of non-genes (interval complement of gene intervals)
+nonGeneIntervals <- interval_complement(geneIntervals)
+#adjuset the starts and ends for chromosome coordinates
+nonGeneIntervals[1][[1]] <- 0
+nonGeneIntervals[length(nonGeneIntervals)/2][[2]] <- CHRLEN20
+
+#init nVariants column
+Chr20GeneData$nVariants <- rep(0, nrow(Chr20GeneData))
+
+
+#count the number of variants per gene
+for (var_i in 1:length(CH20_001@var.info$POS)){
+  pos <- CH20_001@var.info$POS[var_i]
+  inGenes <- names(which(geneIntervals[,1]<=pos & geneIntervals[,2]>=pos))
+  for (g in inGenes){ #should not be more than 3 for any gene
+    Chr20GeneData$nVariants[Chr20GeneData$sym == g] <- Chr20GeneData$nVariants[Chr20GeneData$sym == g] + 1
+  }
+}
 
 # [END]
