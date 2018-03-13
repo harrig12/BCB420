@@ -52,7 +52,7 @@ chromoqc(CH20_001)
 tmp <- read_tsv("../data/HGNC_chr20.txt")
 
 #check for uniqness in the HGNC symbol
-sum(duplicated(tmp$`HGNC symbol`))
+sum(duplicated(tmp$`HGNC symbol`))  #0
 
 #subset as appropriate
 Chr20GeneData <- data.frame(sym = tmp$`HGNC symbol`,
@@ -61,10 +61,14 @@ Chr20GeneData <- data.frame(sym = tmp$`HGNC symbol`,
                             stringsAsFactors = FALSE)
 
 #check all elements have coordinates on the chromosome (0 <= coord <= CHRLEN20)
+
 #genes
-(max(Chr20GeneData$end) <= CHRLEN20)
+(min(Chr20GeneData$end) >= 0)  #True
+(max(Chr20GeneData$end) <= CHRLEN20)  #True
+
 #variants
-(max(CH20_001@var.info$POS) <= CHRLEN20)
+(min(CH20_001@var.info$POS) >= 0)  #True
+(max(CH20_001@var.info$POS) <= CHRLEN20)  #True
 
 #quick plot
 geneIntervals <- Intervals(Chr20GeneData[, c("start", "end")])
@@ -74,7 +78,7 @@ plot(geneIntervals,
      use_points = F,
      xlab = "Coordinate",
      ylab = "n Overlaps",
-     xlim = c(0,CHRLEN20),
+     xlim = c(0, CHRLEN20),
      ylim = c(0,2),
      lwd = 5,
      use_names = F,
@@ -88,15 +92,25 @@ legend(x = 4e+07, y = 0.5, c("HGNC gene", "Centromere"), col=c(1,"#ff00007F"), l
 
 #find start and end coordinates of non-genes (interval complement of gene intervals)
 nonGeneIntervals <- interval_complement(geneIntervals)
+
 #adjuset the starts and ends for chromosome coordinates
-nonGeneIntervals[1][[1]] <- 0
+nonGeneIntervals[[1]] <- 0
 nonGeneIntervals[length(nonGeneIntervals)/2][[2]] <- CHRLEN20
+
+#make colummn to flag genes vs non-genes
+Chr20GeneData$gFlag <- rep(1, nrow(Chr20GeneData))
+
+#add non-genes to chr20 data
+nonGeneNames <- paste0("notAGene", 1:nrow(nonGeneIntervals))
+nonGenes <- as.data.frame(cbind(nonGeneNames, as.matrix(nonGeneIntervals), 0))
+names(nonGenes) <- names(Chr20GeneData)
+Chr20GeneData <- rbind(Chr20GeneData, nonGenes)
 
 #init nVariants column
 Chr20GeneData$nVariants <- rep(0, nrow(Chr20GeneData))
 
-
 #count the number of variants per gene
+#takes a few seconds
 for (var_i in 1:length(CH20_001@var.info$POS)){
   pos <- CH20_001@var.info$POS[var_i]
   inGenes <- names(which(geneIntervals[,1]<=pos & geneIntervals[,2]>=pos))
@@ -104,5 +118,22 @@ for (var_i in 1:length(CH20_001@var.info$POS)){
     Chr20GeneData$nVariants[Chr20GeneData$sym == g] <- Chr20GeneData$nVariants[Chr20GeneData$sym == g] + 1
   }
 }
+
+#count the number of variants per non-gene
+#takes a few seconds
+for (var_i in 1:length(CH20_001@var.info$POS)){
+  pos <- CH20_001@var.info$POS[var_i]
+  inNonGenes <- paste0("notAGene", (which(nonGeneIntervals[,1]<=pos & nonGeneIntervals[,2]>=pos)))
+  for (g in inNonGenes){ #should not be more than 1 for any non-gene
+    Chr20GeneData$nVariants[Chr20GeneData$sym == g] <- Chr20GeneData$nVariants[Chr20GeneData$sym == g] + 1
+  }
+}
+
+#plot raw n variants per gene
+plot(1:nrow(Chr20GeneData), Chr20GeneData$nVariants, pch=18)
+
+#find where to plot the centromere
+cenLoc <- length(which(Chr20GeneData$end<CH20CENTROMERE[1]))
+abline(v = cenLoc, col =2)
 
 # [END]
