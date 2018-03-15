@@ -102,7 +102,7 @@ Chr20GeneData$gFlag <- rep(1, nrow(Chr20GeneData))
 
 #add non-genes to chr20 data
 nonGeneNames <- paste0("notAGene", 1:nrow(nonGeneIntervals))
-nonGenes <- as.data.frame(cbind(nonGeneNames, as.matrix(nonGeneIntervals), 0))
+nonGenes <- cbind(nonGeneNames, as.data.frame(nonGeneIntervals), 0)
 names(nonGenes) <- names(Chr20GeneData)
 Chr20GeneData <- rbind(Chr20GeneData, nonGenes)
 
@@ -129,11 +129,34 @@ for (var_i in 1:length(CH20_001@var.info$POS)){
   }
 }
 
+#sort elements of ch20 by coordinate
+Chr20GeneData <- Chr20GeneData[order(Chr20GeneData$start, Chr20GeneData$end),]
+
 #plot raw n variants per gene
-plot(1:nrow(Chr20GeneData), Chr20GeneData$nVariants, pch=18)
+plot(1:nrow(Chr20GeneData),
+     Chr20GeneData$nVariants,
+     col = ifelse(Chr20GeneData$gFlag==1, 1, 3),
+     pch=18,
+     xlab = "Gene Position",
+     ylab = "n Variants",
+     main = "Raw Variant Counts Per Gene on Chomosome 20 Participant 1")
 
 #find where to plot the centromere
 cenLoc <- length(which(Chr20GeneData$end<CH20CENTROMERE[1]))
 abline(v = cenLoc, col =2)
+legend("topright", c("Gene", "Non-Gene", "Centromere"),
+       pch=c(18, 18, NA),
+       lty=c(NA, NA, 1),
+       col=c(1,3,2))
+
+#normalize variant counts to gene length
+#use two different methods for indexing columns Chr20GeneData because of a quirk of sweep()
+#index with $end to rename
+Chr20GeneData$gLen <- sweep(Chr20GeneData["end"], 1,
+                            Chr20GeneData$start, FUN="-")$end
+Chr20GeneData$normCounts <- sweep(Chr20GeneData["nVariants"], 1,
+                                  Chr20GeneData$gLen, FUN="/")$nVariants
+
 
 # [END]
+
