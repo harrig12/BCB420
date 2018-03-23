@@ -35,7 +35,7 @@ CHRLEN20 <- 64444167
 CH20CENTROMERE <- c(26369569, 29369569)
 
 # load in vcf information
-load("../data/PGP/chr20_001.Rdata")
+load("data/PGP/chr20_001.Rdata")
 CH20_001 <- CH20
 rm(CH20)
 
@@ -49,7 +49,7 @@ head(variant.table(CH20_001))
 chromoqc(CH20_001)
 
 #read in ensemble data (download details documented in journal)
-tmp <- read_tsv("../data/HGNC_chr20.txt")
+tmp <- read_tsv("data/HGNC_chr20.txt")
 
 #check for uniqness in the HGNC symbol
 sum(duplicated(tmp$`HGNC symbol`))  #0
@@ -93,15 +93,16 @@ legend(x = 4e+07, y = 0.5, c("HGNC gene", "Centromere"), col=c(1,"#ff00007F"), l
 #find start and end coordinates of non-genes (interval complement of gene intervals)
 nonGeneIntervals <- interval_complement(geneIntervals)
 
-#adjuset the starts and ends for chromosome coordinates
+#adjust the starts and ends for chromosome coordinates
 nonGeneIntervals[[1]] <- 0
 nonGeneIntervals[length(nonGeneIntervals)/2][[2]] <- CHRLEN20
 
 #make colummn to flag genes vs non-genes
 Chr20GeneData$gFlag <- rep(1, nrow(Chr20GeneData))
 
-#add non-genes to chr20 data
+#add non-genes to non-gene intervals and chr20 data  
 nonGeneNames <- paste0("notAGene", 1:nrow(nonGeneIntervals))
+rownames(nonGeneIntervals) <- nonGeneNames
 nonGenes <- cbind(nonGeneNames, as.data.frame(nonGeneIntervals), 0)
 names(nonGenes) <- names(Chr20GeneData)
 Chr20GeneData <- rbind(Chr20GeneData, nonGenes)
@@ -157,6 +158,63 @@ Chr20GeneData$gLen <- sweep(Chr20GeneData["end"], 1,
 Chr20GeneData$normCounts <- sweep(Chr20GeneData["nVariants"], 1,
                                   Chr20GeneData$gLen, FUN="/")$nVariants
 
+#plot the counts normalized for gene size
+plot(1:nrow(Chr20GeneData),
+     Chr20GeneData$normCounts,
+     col = ifelse(Chr20GeneData$gFlag==1, 1, 3),
+     pch=18,
+     xlab = "Gene Position",
+     ylab = "Variants per Basepair",
+     main = "Length Normalized Variant Counts \n Per Gene on Chomosome 20 Participant 1")
+
+#find where to plot the centromere
+cenLoc <- length(which(Chr20GeneData$end<CH20CENTROMERE[1]))
+abline(v = cenLoc, col =2)
+legend("topright", c("Gene", "Non-Gene", "Centromere"),
+       pch=c(18, 18, NA),
+       lty=c(NA, NA, 1),
+       col=c(1,3,2))
+
+#the most highly varying non-genes seem to be nearest the centromere
+#there does not appear to be a particular clustering of highly varying genes.
+
+#plot distribution of variants per bp in genes
+hist(Chr20GeneData$normCounts[Chr20GeneData$gFlag==1],
+     col = '#00000060')
+
+#plot distribution of variants per bp in non-genes
+hist(Chr20GeneData$normCounts[Chr20GeneData$gFlag==0], add=T,
+     col = '#00FF0060')
+
+legend("topright", c("Gene", "Non-Gene"),
+       lty=c(1, 1),
+       lwd=c(3,3),
+       col=c('#00000060', '#00FF0060'))
+
+#these distributions looks quite similar, let's check what the qq plot looks like
+qqplot(Chr20GeneData$normCounts[Chr20GeneData$gFlag==0], 
+       Chr20GeneData$normCounts[Chr20GeneData$gFlag==1],
+       main = 'Gene and Non-gene Variants per bp qq-plot',
+       ylab = 'Non-gene quantiles',
+       xlab = 'Gene quantiles')
+       
+abline(0, 1)
+
+#the distributions still seem quite similar, particularly near the the lower end. 
+#there is some divergence and for chromosome segments with more variants, they seem 
+#to more frequently represent a gene. This is also supported by the normalized
+#counts plots.
+
+ipar <- par(mfrow = c(1, 2))
+
+boxplot(Chr20GeneData$normCounts[Chr20GeneData$gFlag==1],
+        col = '#00000090', main = 'Gene \nLength Normalized Counts',
+        ylab = 'Variants per bp')
+boxplot(Chr20GeneData$normCounts[Chr20GeneData$gFlag==0],
+        col = '#00FF0090', main = 'Non-Gene \nLength Normalized Counts',
+        ylab = 'Variants per bp')
+
+par(ipar)
 
 # [END]
 
