@@ -284,6 +284,57 @@ for (nP in 1:8){
 
 #Distributions appear similar for the 8 participants
 
+#Are the elements with high variant counts clustered?
+
+thresh <- 0.005
+
+highVarIntervals <- Intervals(cbind(Chr20GeneData$start[Chr20GeneData$normCounts > thresh],
+                                    Chr20GeneData$end[Chr20GeneData$normCounts > thresh]))
+
+rownames(highVarIntervals) <- Chr20GeneData$sym[Chr20GeneData$normCounts > thresh]
+
+
+#colour by gene or non-gene 
+#caution, the intervals are ordered differently than in the dataframe!
+highVarCol <-  (Chr20GeneData[which(Chr20GeneData$sym %in% rownames(highVarIntervals)), 
+                             'gFlag'] * -2) + 3
+
+plot(highVarIntervals,  
+     y = c(0,0),
+     use_points = F,
+     xlab = "Coordinate",
+     xlim = c(0, CHRLEN20),
+     lwd = 5,
+     use_names = F,
+     main = "Chromosome 20 participant 001 \nElements with > 0.005 Variants per bp",
+     col = highVarCol, 
+     axes = T)
+
+#draw centromere
+rect(CH20CENTROMERE[1], -0.05, CH20CENTROMERE[2], 0.05, col = "#ff00007F", border = NA)
+
+legend("topright", c("Gene", "Non-Gene", "Centromere"),
+       pch=c(18, 18, 15),
+       col=c(1,3,'#FF0000BB'))
+
+#Are these highly varying genes particularly associated with disease states?
+#Data stolen from BioHacks repo. See github.com/hyginn/BCBBH-2018 for data prep information
+
+#Check GWAStraits 
+GWAStraits <- read_tsv('data/CHr20GWAStraits.tsv')
+GWAStraits[which(GWAStraits$sym %in% rownames(highVarIntervals)),]
+
+#nothing interesting, it seems
+
+#Check HPAprognostic
+HPAprog <- read_tsv('data/Chr20GeneData.tsv', )
+HPAprog <- HPAprog[,c("sym", "HPAprognostic")]
+
+HPAprog[which(HPAprog$sym %in% rownames(highVarIntervals)),]
+
+#two cancers make an appearance; liver and renal.
+
+#expand the search
 
 # [END]
 
