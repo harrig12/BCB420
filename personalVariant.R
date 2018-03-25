@@ -212,10 +212,10 @@ boxplot(normCounts~gFlag,
         Chr20GeneData,
         main = 'Gene Length Normalized Variant Counts \nChromosome 20 Participant 001',
         ylab = 'Variants per bp',
-        col = c('#00000090', '#00FF0090'),
+        col = c('#00FF0090', '#00000090'),
         axes = F)
 axis(2)
-axis(1, at = c(1:2), tick = F, labels = c('Gene', 'Non-Gene'))
+axis(1, at = c(1:2), tick = F, labels = c('Non-Gene', 'Gene'))
 
 
 
@@ -254,7 +254,7 @@ for (nP in 1:8){
   if (nP == 1){
     boxplot(normCounts~gFlag, 
             get(participantN), 
-            col = c('#00000090', '#00FF0090'),
+            col = c('#00FF0090', '#00000090'),
             xlim = c(0,17),
             ylim = c(0, 0.03),
             axes = F,
@@ -273,7 +273,7 @@ for (nP in 1:8){
   else{
     boxplot(normCounts~gFlag, 
             get(participantN), 
-            col = c('#00000090', '#00FF0090'),
+            col = c('#00FF0090', '#00000090'),
             add = T,
             at = 1:2 + 2*(nP-1),
             axes = F
@@ -334,7 +334,9 @@ HPAprog[which(HPAprog$sym %in% rownames(highVarIntervals)),]
 
 #two cancers make an appearance; liver and renal.
 
-#expand the search
+#expand the search - reduce the threshold!
+
+
 
 # [END]
 
