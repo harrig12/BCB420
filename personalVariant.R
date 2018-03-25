@@ -8,7 +8,8 @@
 #
 # Purpose: Explore variant density in and out of protein-coding genes
 #
-# Versions: 1.1 Stream with chr20 parsing scripts
+# Versions: 1.2 Plot 8 participants using makeChrElements.R
+#           1.1 Stream with chr20 parsing scripts
 #           1.0 Initial exploration
 #
 # Notes: Associated with personal genomes unit (2.1) in my BCB420 journal
@@ -163,9 +164,9 @@ plot(1:nrow(Chr20GeneData),
      Chr20GeneData$normCounts,
      col = ifelse(Chr20GeneData$gFlag==1, 1, 3),
      pch=18,
-     xlab = "Gene Position",
+     xlab = "Position",
      ylab = "Variants per Basepair",
-     main = "Length Normalized Variant Counts \n Per Gene on Chomosome 20 Participant 1")
+     main = "Length Normalized Variant Counts \n Per Element on Chomosome 20 Participant 1")
 
 #find where to plot the centromere
 cenLoc <- length(which(Chr20GeneData$end<CH20CENTROMERE[1]))
@@ -175,46 +176,114 @@ legend("topright", c("Gene", "Non-Gene", "Centromere"),
        lty=c(NA, NA, 1),
        col=c(1,3,2))
 
-#the most highly varying non-genes seem to be nearest the centromere
+#the most highly varying non-genes seem to be near the centromere
 #there does not appear to be a particular clustering of highly varying genes.
 
 #plot distribution of variants per bp in genes
 hist(Chr20GeneData$normCounts[Chr20GeneData$gFlag==1],
-     col = '#00000060')
+     col = '#00000090',
+     main = 'Variants in Gene and Non-Gene elements \nChromosome 20 Participant 001',
+     xlab = 'Variants per bp')
 
 #plot distribution of variants per bp in non-genes
 hist(Chr20GeneData$normCounts[Chr20GeneData$gFlag==0], add=T,
-     col = '#00FF0060')
+     col = '#00FF0090')
 
 legend("topright", c("Gene", "Non-Gene"),
        lty=c(1, 1),
        lwd=c(3,3),
-       col=c('#00000060', '#00FF0060'))
+       col=c('#00000090', '#00FF0090'))
 
 #these distributions looks quite similar, let's check what the qq plot looks like
 qqplot(Chr20GeneData$normCounts[Chr20GeneData$gFlag==0], 
        Chr20GeneData$normCounts[Chr20GeneData$gFlag==1],
        main = 'Gene and Non-gene Variants per bp qq-plot',
-       ylab = 'Non-gene quantiles',
-       xlab = 'Gene quantiles')
+       xlab = 'Non-gene quantiles',
+       ylab = 'Gene quantiles')
        
 abline(0, 1)
 
-#the distributions still seem quite similar, particularly near the the lower end. 
+#the distributions still seem fairly similar, particularly near the the lower end. 
 #there is some divergence and for chromosome segments with more variants, they seem 
 #to more frequently represent a gene. This is also supported by the normalized
 #counts plots.
 
-ipar <- par(mfrow = c(1, 2))
+boxplot(normCounts~gFlag, 
+        Chr20GeneData,
+        main = 'Gene Length Normalized Variant Counts \nChromosome 20 Participant 001',
+        ylab = 'Variants per bp',
+        col = c('#00000090', '#00FF0090'),
+        axes = F)
+axis(2)
+axis(1, at = c(1:2), tick = F, labels = c('Gene', 'Non-Gene'))
 
-boxplot(Chr20GeneData$normCounts[Chr20GeneData$gFlag==1],
-        col = '#00000090', main = 'Gene \nLength Normalized Counts',
-        ylab = 'Variants per bp')
-boxplot(Chr20GeneData$normCounts[Chr20GeneData$gFlag==0],
-        col = '#00FF0090', main = 'Non-Gene \nLength Normalized Counts',
-        ylab = 'Variants per bp')
 
-par(ipar)
+
+#plot the first 8 participants!
+
+source("makeChrElements.R")
+
+#setup 
+for (nP in 1:8){
+  print(paste0('working on participant ', nP))
+  
+  #load the chr dataframe
+  load(paste0('data/PGP/chr20_00', nP, '.Rdata'))
+  
+  #set up the elements
+  assign(paste0('CHR20_00', nP), makeChrEle(CH20))
+  rm(CH20)
+}
+
+#plot
+#prepare labels for box plot
+
+boxLabels <- NULL
+
+for (nP in 1:8){
+  boxLabels <- c(boxLabels, 
+                 paste0('Participant ', nP)) 
+}
+
+#draw box plot
+for (nP in 1:8){
+  
+  participantN <- paste0('CHR20_00', nP)
+  
+  #draw the first boxplot
+  if (nP == 1){
+    boxplot(normCounts~gFlag, 
+            get(participantN), 
+            col = c('#00000090', '#00FF0090'),
+            xlim = c(0,17),
+            ylim = c(0, 0.03),
+            axes = F,
+            main = 'Gene Length Normalized Variant Counts \nChromosome 20, 8 Participants from PGP',
+            ylab = 'Variants per bp'
+    )
+    axis(1, tick = F, at = (1:8)*2 - 0.5, labels = boxLabels, las = 2, hadj = 0.8)
+    axis(2)
+    legend("topright", c("Gene", "Non-Gene"),
+           lty=c(1, 1),
+           lwd=c(3,3),
+           col=c('#00000090', '#00FF0090'))
+  }
+  
+  #add the others
+  else{
+    boxplot(normCounts~gFlag, 
+            get(participantN), 
+            col = c('#00000090', '#00FF0090'),
+            add = T,
+            at = 1:2 + 2*(nP-1),
+            axes = F
+    )  
+  }
+  
+} 
+
+#Distributions appear similar for the 8 participants
+
 
 # [END]
 
