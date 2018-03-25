@@ -286,7 +286,7 @@ for (nP in 1:8){
 
 #Are the elements with high variant counts clustered?
 
-thresh <- 0.005
+thresh <- 0.00
 
 highVarIntervals <- Intervals(cbind(Chr20GeneData$start[Chr20GeneData$normCounts > thresh],
                                     Chr20GeneData$end[Chr20GeneData$normCounts > thresh]))
@@ -295,7 +295,7 @@ rownames(highVarIntervals) <- Chr20GeneData$sym[Chr20GeneData$normCounts > thres
 
 
 #colour by gene or non-gene 
-#caution, the intervals are ordered differently than in the dataframe!
+#caution, the colours will appear different if plotted on a different scale!
 highVarCol <-  (Chr20GeneData[which(Chr20GeneData$sym %in% rownames(highVarIntervals)), 
                              'gFlag'] * -2) + 3
 
@@ -318,23 +318,25 @@ legend("topright", c("Gene", "Non-Gene", "Centromere"),
        col=c(1,3,'#FF0000BB'))
 
 #Are these highly varying genes particularly associated with disease states?
-#Data stolen from BioHacks repo. See github.com/hyginn/BCBBH-2018 for data prep information
+#Data tables from BioHacks repo. See github.com/hyginn/BCBBH-2018 for data prep information
 
-#Check GWAStraits 
-GWAStraits <- read_tsv('data/CHr20GWAStraits.tsv')
+#Look for common GWAStraits 
+#GWAStraits <- read_tsv('data/CHr20GWAStraits.tsv')
 GWAStraits[which(GWAStraits$sym %in% rownames(highVarIntervals)),]
 
 #nothing interesting, it seems
 
-#Check HPAprognostic
-HPAprog <- read_tsv('data/Chr20GeneData.tsv', )
-HPAprog <- HPAprog[,c("sym", "HPAprognostic")]
-
-HPAprog[which(HPAprog$sym %in% rownames(highVarIntervals)),]
-
-#two cancers make an appearance; liver and renal.
-
 #expand the search - reduce the threshold!
+#repeat above with threshold 0.004
+#nothing common!
+#repeat above with threshold 0.001
+
+traits <- GWAStraits[which(GWAStraits$sym %in% rownames(highVarIntervals)),]$trait
+traitFreq <- table(traits)
+barplot(traitFreq)
+
+#get top 10 (not -)
+head(traitFreq[order(traitFreq, decreasing = T)], 11)
 
 
 
