@@ -159,7 +159,7 @@ fastBWT2s <- function(cvBWT){
 
 
 #search a substring
-#to fins a substring, we look for the lowest and highest index of an occurence
+#to find a substring, we look for the lowest and highest index of an occurence
 #of a prefix W
 
 # difinition from http://stanford.edu/class/cs262/notes/lecture4.pdf
@@ -207,7 +207,7 @@ exactMatch <- function(W, cvBWT){
   ret <- c(low, high)
   names(ret) <- c('low', 'high')
   
-  return ()
+  return (ret)
 }
 
 
