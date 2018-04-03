@@ -16,34 +16,28 @@ ui <- fluidPage(
    titlePanel("A Perfectly Normal Distribution"),
    
    #Get the parameters for our distribution
-   
-   #mu
-   fluidRow(
-            column(3, 
-            numericInput("mu", h3("Mean"), 
-            value = 0))
-   ),
-   
-   #sigma^2
-   fluidRow(
-            column(3, 
-            numericInput("sigma2", h3("Variance"), 
-            value = 1))
-   ),
-
-  #n
-  fluidRow(     
-           column(3, 
-           sliderInput("n", h3("Number of samples:"),
-           min = 0, 
-           max = 1000, 
-           value = 50))
-  ), 
-   
-   # Show a plot of the generated distribution
-   mainPanel(
-             plotOutput("distPlot")
-   )
+   sidebarLayout(
+     sidebarPanel(
+     
+       #mu
+       numericInput("mu", h3("Mean"), value = 0),
+       
+       #sigma^2
+       numericInput("sigma2", h3("Variance"), value = 1),
+    
+       #n
+       sliderInput("n", 
+                   h3("Number of samples:"),
+                   min = 0, 
+                   max = 5, 
+                   value = 2.5,
+                   step = 0.1,
+                   pre = '10^')
+     ),
+      
+       # Show a plot of the generated distribution
+       mainPanel(plotOutput("distPlot"))
+  )
 )
 
 # Define server logic required to draw a histogram
@@ -52,7 +46,7 @@ server <- function(input, output) {
    output$distPlot <- renderPlot({
      
       # generate distribution based on input$mu, input$sigma2, and input$n from ui.R
-      x <- rnorm(1:input$n, input$mu, input$sigma2)
+      x <- rnorm(1:10**input$n, input$mu, input$sigma2)
       
       # draw the histogram of values
       hist(x, col = 4)
