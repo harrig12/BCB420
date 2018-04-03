@@ -93,7 +93,7 @@ stringI <- slowBWT2s(s2BWT(mySeq, mySA))
 
 #========= fast BWT method ==================================================
 
-lexiScore <- function(s, char){
+getLexiScore <- function(s, char){
   #s is a character vector
   #char is the character to score
   
@@ -131,11 +131,11 @@ getIthOccurence <- function(s){
 computeLF <- function(cvBWT){
   #cvBWT is a BW-transformed character vector of the initial string
   
-  #find lexicographical score of each character in sBWT
+  #find lexicographical score of each character in cvBWT
   #this is "C(a)" in the referenced material
   lexiScores <- numeric()
   for (c in cvBWT){
-    lexiScores <- c(lexiScores, lexiScore(cvBWT, c))
+    lexiScores <- c(lexiScores, getLexiScore(cvBWT, c))
   }
   ithOccurence <- getIthOccurence(cvBWT)
   return(lexiScores + ithOccurence)
@@ -162,31 +162,52 @@ fastBWT2s <- function(cvBWT){
 #to fins a substring, we look for the lowest and highest index of an occurence
 #of a prefix W
 
-#build the dataframe from which we found the string from the BWT
-#very similar to slowBWT2s
-rotateBWT <- function(sBWT){
+# difinition from http://stanford.edu/class/cs262/notes/lecture4.pdf
+LFC <- function(r, a, scores, cvBWT){
+  #r is an index in the BWT
+  #a is a character in the BWT
+  #scores is a named array holding lexicographical scores of each caracter in the BWT 
+  #cvBWT is a character vector of the BWT
   
-  stringO <- character()
-  dfBWT <- as.data.frame(sBWT)
+  ithOccurence <- getIthOccurence(cvBWT)
+  names(ithOccurence) <- cvBWT
   
-  for (i in 1:nrow(dfBWT)){
-    stringO <- paste0(dfBWT[,1], sort(stringO))
-    dfBWT <- cbind(sBWT, stringO)
-  }
+  #get the number of occurances of a up to r in BWT
+  #this is the largest ith occurance before index r
+  #or 0 if there is no occurance
+  i <- max(ithOccurence[which(names(ithOccurence[1:r]) == a)], 0)
   
-  return(dfBWT[,2])
+  return (scores[a] + i)
+  
 }
 
-getLowAndHighW <- function(BWTrotations, W){
-  #reduce each string to a prefix
-  for (indPrefix in 1:length(BWTrotations)){
-    BWTrotations[indPrefix] <- c2s(s2c(BWTrotations[indPrefix])[1:nchar(W)])
+# taken directly from http://stanford.edu/class/cs262/notes/lecture4.pdf
+exactMatch <- function(W, cvBWT){
+  #W is a character vector of the substring to search for
+  #cvBWT is a character vector of the BWT
+
+  lexiScores <- numeric()
+  for (c in cvBWT){
+    lexiScores[c] <- getLexiScore(cvBWT, c)
   }
-  #find the indices of occurences of W in the prefix array
-  indW <- which(BWTrotations == W)
+  lexiScores <- sort(lexiScores)
+
+  a <- W[length(W)]
+  low <- lexiScores[a] 
+  high <- lexiScores[which(names(lexiScores) == a) + 1]
+
+  i = length(W) - 1
+  while (low <= high & i >= 1){
+    a <- W[i]
+    low <- LFC(low-1, a, lexiScores, cvBWT) + 1
+    high <- LFC(high, a, lexiScores, cvBWT)
+    i <- i - 1
+  }
   
-  #return the first and last occurences
-  return (c(indW[1], indW[length(indW)]))
+  ret <- c(low, high)
+  names(ret) <- c('low', 'high')
+  
+  return ()
 }
 
 
