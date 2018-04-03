@@ -70,16 +70,43 @@ BWT2s <- function(sBWT){
     dfBWT <- cbind(sBWT, stringO)
   }
 
-  return(as.character(dfBWT[which(dfBWT[,1] == "$") - 1, 2]))
+  return(dfBWT[which(dfBWT[,1] == "$") - 1, 2])
 }
 
 #did we get the initial string back?
 stringI <- BWT2s(s2BWT(mySeq, mySA))
 
-(stringS == stringI) #True
+(c2s(mySeq) == stringI) #True
 
 #search a substring
+#to fins a substring, we look for the lowest and highest index of an occurance
+#of a prefix W
 
+#build the dataframe from which we found the string from the BWT
+#very similar to BWT2s
+permuteBWT <- function(sBWT){
+  
+  stringO <- character()
+  dfBWT <- as.data.frame(sBWT)
+  
+  for (i in 1:nrow(dfBWT)){
+    stringO <- paste0(dfBWT[,1], sort(stringO))
+    dfBWT <- cbind(sBWT, stringO)
+  }
+  
+  return(dfBWT[,2])
+}
 
+getLowAndHighW <- function(BWTpermutations, W){
+  #reduce each string to a prefix
+  for (indPrefix in 1:length(BWTpermutations)){
+    BWTpermutations[indPrefix] <- c2s(s2c(BWTpermutations[indPrefix])[1:nchar(W)])
+  }
+  #find the indices of occurances of W in the prefix array
+  indW <- which(BWTpermutations == W)
+  
+  #return the first and last occurances
+  return (c(indW[1], indW[length(indW)]))
+}
 
 # [END]
